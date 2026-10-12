@@ -28,3 +28,10 @@ async function handleLoadTasks() {
         // Step 6: Render tasks to DOM and clear status
         renderTasks();
         statusMessage.textContent = "";
+
+        } catch (error) {
+        // Error handling as requested
+        statusMessage.textContent = "Failed to load tasks. Please try again.";
+        console.error("Error fetching tasks:", error);
+    }
+}
