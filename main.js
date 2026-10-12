@@ -18,3 +18,13 @@ async function handleLoadTasks() {
         // Step 3: Specific JSON Requirement (Stringify then Parse)
         const jsonString = JSON.stringify(rawData);
         const parsedData = JSON.parse(jsonString);
+
+        // Step 4: Convert raw parsed objects into Task class instances
+        const taskInstances = parsedData.map(item => new Task(item.id, item.title, item.completed));
+
+        // Step 5: Store in TaskManager immutably
+        taskManager.setTasks(taskInstances);
+
+        // Step 6: Render tasks to DOM and clear status
+        renderTasks();
+        statusMessage.textContent = "";
