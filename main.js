@@ -35,3 +35,10 @@ async function handleLoadTasks() {
         console.error("Error fetching tasks:", error);
     }
 }
+
+// Function to render tasks using DOM creation methods (No inline HTML handlers)
+function renderTasks() {
+    // Clear current DOM container contents
+    taskListContainer.innerHTML = '';
+
+    taskManager.tasks.forEach(task => {
