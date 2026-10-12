@@ -43,3 +43,16 @@ button#loadTasksBtn:hover {
     margin-bottom: 15px;
     color: #555;
 }
+
+/* Dynamic Task Items */
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task span {
+    flex-grow: 1;
+}
