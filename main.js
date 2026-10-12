@@ -71,3 +71,18 @@ function renderTasks() {
             taskManager.removeTask(task.id);
             renderTasks();
         });
+
+        // Append buttons and spans to card
+        btnContainer.appendChild(toggleBtn);
+        btnContainer.appendChild(deleteBtn);
+        
+        taskDiv.appendChild(titleSpan);
+        taskDiv.appendChild(btnContainer);
+
+        // Append to task list in DOM
+        taskListContainer.appendChild(taskDiv);
+    });
+}
+
+// Event Listeners setup
+loadTasksBtn.addEventListener('click', handleLoadTasks);
