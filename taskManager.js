@@ -24,3 +24,13 @@ class TaskManager {
     constructor() {
         this.tasks = [];
     }
+
+    // Replaces tasks immutably
+    setTasks(newTasks) {
+        this.tasks = [...newTasks];
+    }
+
+    // Adds a task immutably
+    addTask(task) {
+        this.tasks = [...this.tasks, task];
+    }
