@@ -39,3 +39,14 @@ class TaskManager {
     removeTask(taskId) {
         this.tasks = this.tasks.filter(t => t.id !== taskId);
     }
+
+    // Toggles a task completion status immutably using map
+    toggleTask(taskId) {
+        this.tasks = this.tasks.map(t => {
+            if (t.id === taskId) {
+                return t.toggle();
+            }
+            return t;
+        });
+    }
+}
