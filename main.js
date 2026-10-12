@@ -14,3 +14,7 @@ async function handleLoadTasks() {
         
         // Step 2: Fetch raw data asynchronously
         const rawData = await fetchTasks();
+
+        // Step 3: Specific JSON Requirement (Stringify then Parse)
+        const jsonString = JSON.stringify(rawData);
+        const parsedData = JSON.parse(jsonString);
