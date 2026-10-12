@@ -12,3 +12,9 @@ class Task {
         this.title = title;
         this.completed = completed;
     }
+
+    // Returns a new Task instance with inverted completion status (Immutable)
+    toggle() {
+        return new Task(this.id, this.title, !this.completed);
+    }
+}
