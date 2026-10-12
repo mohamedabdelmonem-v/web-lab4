@@ -34,3 +34,8 @@ class TaskManager {
     addTask(task) {
         this.tasks = [...this.tasks, task];
     }
+
+    // Removes a task immutably using filter
+    removeTask(taskId) {
+        this.tasks = this.tasks.filter(t => t.id !== taskId);
+    }
