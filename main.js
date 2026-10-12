@@ -42,3 +42,32 @@ function renderTasks() {
     taskListContainer.innerHTML = '';
 
     taskManager.tasks.forEach(task => {
+        // Create parent task element
+        const taskDiv = document.createElement('div');
+        taskDiv.className = `task ${task.completed ? 'completed' : ''}`;
+
+        // Title span
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = task.title;
+
+        // Button wrapper
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'task-buttons';
+
+        // Toggle button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'toggle-btn';
+        toggleBtn.textContent = task.completed ? 'Undo' : 'Complete';
+        toggleBtn.addEventListener('click', () => {
+            taskManager.toggleTask(task.id);
+            renderTasks();
+        });
+
+        // Delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', () => {
+            taskManager.removeTask(task.id);
+            renderTasks();
+        });
