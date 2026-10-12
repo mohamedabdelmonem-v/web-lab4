@@ -18,3 +18,9 @@ class Task {
         return new Task(this.id, this.title, !this.completed);
     }
 }
+
+// Class representing the Manager of tasks
+class TaskManager {
+    constructor() {
+        this.tasks = [];
+    }
